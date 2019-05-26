@@ -28,9 +28,7 @@ class DiariesController < ApplicationController
 
     respond_to do |format|
       if @diary.save
-        format.html {
-          redirect_to @diary, notice: 'Diary was successfully created.'
-        }
+        format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
         format.json { render :show, status: :created, location: @diary }
       else
         format.html { render :new }
