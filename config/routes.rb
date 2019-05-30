@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :diaries
   get '/users', to: 'users#index'
   get '/users/new'
-  get "about" => "top#about", as: "about"
+  get 'about' => 'top#about', as: 'about'
+  get 'lesson/:action(/:name)' => 'lesson'
 end
