@@ -11,13 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190525093429) do
+ActiveRecord::Schema.define(version: 20190601053734) do
 
   create_table "diaries", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "body",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer  "number",        limit: 4,                   null: false
+    t.string   "name",          limit: 255,                 null: false
+    t.string   "full_name",     limit: 255
+    t.date     "birthday"
+    t.integer  "gender",        limit: 4,   default: 0,     null: false
+    t.boolean  "administrator",             default: false, null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "phone",         limit: 255
+    t.string   "email",         limit: 255
   end
 
   create_table "users", id: false, force: :cascade do |t|

@@ -51,6 +51,17 @@ class LessonController < ApplicationController
     @surface = 141.31
   end
 
+  def step18
+    @zaiko = 1
+  end
+
+  def step19
+    @items = {
+      "ふらいんぱん" => 2680, "ワインクラス" => 2550,
+      "ペッパー" => 4551, "ピーラー" => 945
+    }
+  end
+
   private
 
   def set_message

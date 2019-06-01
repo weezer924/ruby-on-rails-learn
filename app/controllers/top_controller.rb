@@ -1,10 +1,10 @@
 class TopController < ApplicationController
   def index
-    @message = "おはようございます！"
   end
 
   def about
     @message1 = "ハロウィーン"
+    @page_title = "jackie chen"
   end
 
   private
