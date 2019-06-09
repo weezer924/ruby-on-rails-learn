@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'top#index'
+  resources :articles
   resources :diaries
   resources :members do
     collection { get "search" }

@@ -1,3 +1,27 @@
 <%= form_for @member do |form| %>
-  背番号:<%= form.text_field :number %>
+  <tr>
+    <th>背番号:<%= form.text_field :number %></th>
+    <td><%= form.text_field :number, size: 8%></td>
+  </tr>
+  <tr>
+    <th><%= form.label :name, 'ユーザ名' %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :full_name, '氏名' %></th>
+    <td><%= form.text_field :full_name %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td>
+      <%= form.radio_button :gender, 0 %>
+      <%= form.label :gender_0, "男" %>
+      <%= form.radio_button :gender, 1 %>
+      <%= form.label :gender_1, "女" %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :birthday, "誕生日", for: "member_birthday_1i" %></th>
+    <td><%= form.date_select :birthday, start_year: 1940, end_year: Time.now.year %>
+  </tr>
 <% end %>
